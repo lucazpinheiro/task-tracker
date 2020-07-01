@@ -10,6 +10,8 @@ https://www.codeinwp.com/blog/react-best-practices/
 
 https://towardsdatascience.com/react-best-practices-804def6d5215
 
+https://reactjsexample.com/article-cards-with-reactjs/
+
 
 ## `Issue basic structure`
 
