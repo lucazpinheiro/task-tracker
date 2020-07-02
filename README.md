@@ -16,7 +16,8 @@ https://reactjsexample.com/article-cards-with-reactjs/
 ## `Issue basic structure`
 
 ```
-{
+{   
+    "id": string -> six charecters
     "title": string,
     "description": string,
     "status": "to-do" || "done" || "doing",  ... basic columns to start, want to add at least four default columns: backlog, doing, done and review
