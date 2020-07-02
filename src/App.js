@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Card from './components/Card';
+import IssueCard from './components/Card';
 import './App.css';
 
 function getIssues() {
@@ -44,7 +44,7 @@ function App() {
       <h1>Issue tracker app</h1>
       <br />
       {issuesList.map((issue) => (
-        <Card
+        <IssueCard
           key={issuesList.id}
           issueTitle={issue.title}
           issueDescription={issue.description}
