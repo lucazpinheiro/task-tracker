@@ -1,5 +1,11 @@
 # jira/trello like issue tracker app
 
+## `TO-DO`
+
+- remove material-ui card component and create new card component from scratch
+- finish collumn layout
+- add drag and drop
+
 ## `some references for best practices`
 
 https://reactjs.org/docs/thinking-in-react.html
@@ -10,13 +16,18 @@ https://www.codeinwp.com/blog/react-best-practices/
 
 https://towardsdatascience.com/react-best-practices-804def6d5215
 
-Cards: https://material-ui.com/api/card-content/
-    https://material-ui.com/components/cards/
+Cards:
+    https://medium.com/better-programming/build-a-reusable-responsive-card-component-with-styled-components-3ca14933f7e5
 
-Board/Container: https://material-ui.com/components/container/
 
 TopBar: https://material-ui.com/components/app-bar/#app-bar
 
+
+drag and drop:
+    
+    https://github.com/atlassian/react-beautiful-dnd
+
+    https://react-dnd.github.io/react-dnd/about
 
 ## `Issue basic structure`
 
