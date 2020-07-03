@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import IssueCard from './components/Card';
+import TopBar from './components/TopBar';
+import Board from './components/Board';
 import './App.css';
 
 function getIssues() {
@@ -41,16 +42,8 @@ function App() {
 
   return (
     <div>
-      <h1>Issue tracker app</h1>
-      <br />
-      {issuesList.map((issue) => (
-        <IssueCard
-          key={issuesList.id}
-          issueTitle={issue.title}
-          issueDescription={issue.description}
-          issueStatus={issue.status}
-        />
-      ))}
+      <TopBar />
+      <Board issues={issuesList} />
     </div>
   );
 }

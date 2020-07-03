@@ -10,7 +10,12 @@ https://www.codeinwp.com/blog/react-best-practices/
 
 https://towardsdatascience.com/react-best-practices-804def6d5215
 
-https://reactjsexample.com/article-cards-with-reactjs/
+Cards: https://material-ui.com/api/card-content/
+    https://material-ui.com/components/cards/
+
+Board/Container: https://material-ui.com/components/container/
+
+TopBar: https://material-ui.com/components/app-bar/#app-bar
 
 
 ## `Issue basic structure`
