@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import TopBar from './components/TopBar';
 import Board from './components/Board';
+// import Card from './components/Card';
 import './App.css';
 
 function getIssues() {
@@ -42,7 +42,7 @@ function App() {
 
   return (
     <div>
-      <TopBar />
+      {/* <Card /> */}
       <Board issues={issuesList} />
     </div>
   );

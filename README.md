@@ -22,7 +22,6 @@ Cards:
 
 TopBar: https://material-ui.com/components/app-bar/#app-bar
 
-
 drag and drop:
     
     https://github.com/atlassian/react-beautiful-dnd

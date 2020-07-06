@@ -1,5 +1,5 @@
 import React from 'react';
-import IssueCard from '../Card';
+import Card from '../Card';
 import '../../App.css';
 
 export default function Column({ title, content }) {
@@ -9,7 +9,7 @@ export default function Column({ title, content }) {
         {title}
       </h2>
       {content.map((issue) => (
-        <IssueCard
+        <Card
           key={issue.id}
           issueTitle={issue.title}
           issueDescription={issue.description}
