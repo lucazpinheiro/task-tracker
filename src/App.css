@@ -3,7 +3,8 @@
 body{
     overflow:hidden;
     margin: 0;
-    font-family: 'Titillium Web', sans-serif
+    background-color: coral;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 /* board  */
@@ -30,8 +31,9 @@ body{
 .column {
     float: left;
     width: 25%;
+    background-color: purple;
+    height: 100%;
     /* padding: 10px; */
-    /* height: 300px; Should be removed. Only for demonstration */
 }
 
 /* Clear floats after the columns */
