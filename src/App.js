@@ -16,10 +16,8 @@ function App() {
   }, []);
 
   return (
-    <div className="container">
-      <div className="board-container">
-        <Board issues={issuesList} />
-      </div>
+    <div className="board-container">
+      <Board issues={issuesList} />
     </div>
   );
 }

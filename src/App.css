@@ -5,10 +5,6 @@ body{
     font-family: 'Titillium Web', sans-serif;
 }
 
-.container {
-    height: 100vh;
-    position: relative;
-}
 
 /* board  */
 .board-container {
@@ -20,65 +16,31 @@ body{
     transform: translate(-50%, -50%);
     width: 90vw;
     height: 90vh;
-    border: 3px solid steelblue; /* need to remove this */
+    background-color: #708090;
 }
 
 .board {
     width: 100%;
     height: 100%;
-    background-color: chocolate;
-}
-  
-.backlog-column-container {
-    width: 25%;
-    height: 100%;
-    background-color: white;
+    display: flex;
 }
 
-.doing-column-container {
-    width: 25%;
-    height: 100%;
-    background-color: white;
-}
 
-.review-column-container {
-    width: 25%;
-    height: 100%;
-    background-color: white;
-}
-
-.done-column-container {
-    width: 25%;
-    height: 100%;
-    background-color: white;
-}
 /* columns */
-
-.column-container-x {
-    width: 25%;
-    height: 100%;
-    background-color: white;
-}
-
 .column-container {
-    float: left;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: start; */
+    margin-left: 5px;
+    margin-right: 5px;
     width: 25%;
     height: 100%;
-    background-color: white;
-    overflow:hidden; /* added */
-    position:relative; /* added */
 }
 
 .column {
-    background-color: white;
-    overflow:hidden; /* added */
-    position:relative; /* added */
+    
+    overflow:hidden; 
+    position:relative;
+   
 }
 
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-} 
