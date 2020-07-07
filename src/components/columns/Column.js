@@ -2,6 +2,7 @@ import React from 'react';
 import Card from '../Card';
 import '../../App.css';
 
+
 export default function Column({ title, content }) {
   return (
     <div className="column">

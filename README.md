@@ -35,9 +35,7 @@ drag and drop:
     "id": string -> six charecters
     "title": string,
     "description": string,
-    "status": "to-do" || "done" || "doing",  ... basic columns to start, want to add at least four default columns: backlog, doing, done and review
-    "addedDate": date,
-    "deadLineDate": date
+    "status": "to-do" || "review" || "doing" || "done" ,  ... basic columns to start, want to add at least four default columns: to-do, doing, done and review
 }
 ```
 ----------------------------
