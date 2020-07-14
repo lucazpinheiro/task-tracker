@@ -2,9 +2,13 @@
 
 ## `TO-DO`
 
-- remove material-ui card component and create new card component from scratch
-- finish collumn layout
+MOST IMPORTANT
+- add logic to update status
+
+CAN WAIT
 - add drag and drop
+- finish collumn layout (I will leave it the way it is right now, don't want to spend much more time on style of app)
+
 
 ## `some references for best practices`
 
