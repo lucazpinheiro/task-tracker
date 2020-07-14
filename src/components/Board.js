@@ -20,18 +20,19 @@ function selectIssues(issuesList) {
   return [todoList, doingList, reviewList, doneList];
 }
 
-export default function Board({ issues }) {
+export default function Board({ issues, updateStatus }) {
   const [todoList, doingList, reviewList, doneList] = selectIssues(issues);
   return (
     <div className="board">
-      <BackLogColumn content={todoList} />
-      <DoingColumn content={doingList} />
-      <DoneColumn content={reviewList} />
-      <ReviewColumn content={doneList} />
+      <BackLogColumn content={todoList} updateStatus={updateStatus} />
+      <DoingColumn content={doingList} updateStatus={updateStatus} />
+      <ReviewColumn content={reviewList} updateStatus={updateStatus} />
+      <DoneColumn content={doneList} updateStatus={updateStatus} />
     </div>
   );
 }
 
 Board.propTypes = {
   issues: PropTypes.arrayOf(PropTypes.object).isRequired,
+  updateStatus: PropTypes.func.isRequired,
 };

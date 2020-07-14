@@ -7,7 +7,7 @@ MOST IMPORTANT
 
 CAN WAIT
 - add drag and drop
-- finish collumn layout (I will leave it the way it is right now, don't want to spend much more time on style of app)
+- finish collumn layout (I will leave it the way it is for now, don't want to spend more time on the style)
 
 
 ## `some references for best practices`
@@ -25,6 +25,10 @@ Cards:
 
 
 TopBar: https://material-ui.com/components/app-bar/#app-bar
+
+examples for what I'm planning for the 'tags' feature
+    https://sanusart.github.io/react-dropdown-select/
+    https://react-select.com/home
 
 drag and drop:
     

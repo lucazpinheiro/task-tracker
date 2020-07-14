@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import StatusSelector from './StatusSelect';
 
 const Card = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -49,7 +50,13 @@ const ActionButton = styled.button`
   }
 `;
 
-export default function IssueCard({ issueTitle, issueDescription, issueStatus }) {
+export default function IssueCard({
+  issueId,
+  issueTitle,
+  issueDescription,
+  issueStatus,
+  updateStatus,
+}) {
   return (
     <Card>
       <CardContainer>
@@ -62,14 +69,20 @@ export default function IssueCard({ issueTitle, issueDescription, issueStatus })
         <Tag>
           {issueStatus}
         </Tag>
-        <ActionButton>update</ActionButton>
+        <StatusSelector
+          issueId={issueId}
+          currentStatus={issueStatus}
+          updateStatus={updateStatus}
+        />
       </CardContainer>
     </Card>
   );
 }
 
 IssueCard.propTypes = {
+  issueId: PropTypes.string.isRequired,
   issueTitle: PropTypes.string.isRequired,
   issueDescription: PropTypes.string.isRequired,
   issueStatus: PropTypes.string.isRequired,
+  updateStatus: PropTypes.func.isRequired,
 };

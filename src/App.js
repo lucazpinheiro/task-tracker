@@ -15,9 +15,16 @@ function App() {
     setIssuesList(getIssues());
   }, []);
 
+  function handleUpdateStatus(issueId, newStatus) {
+    const issueIndex = issuesList.findIndex((element) => element.id === issueId);
+    const updatedIssuesList = [...issuesList];
+    updatedIssuesList[issueIndex].status = newStatus;
+    setIssuesList(updatedIssuesList);
+  }
+
   return (
     <div className="board-container">
-      <Board issues={issuesList} />
+      <Board issues={issuesList} updateStatus={handleUpdateStatus} />
     </div>
   );
 }

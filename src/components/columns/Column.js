@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Card from '../Card';
 import '../../App.css';
 
-export default function Column({ title, content }) {
+export default function Column({ title, content, updateStatus }) {
   return (
     <div className="column-container">
       <div className="column">
@@ -13,9 +13,11 @@ export default function Column({ title, content }) {
         {content.map((issue) => (
           <Card
             key={issue.id}
+            issueId={issue.id}
             issueTitle={issue.title}
             issueDescription={issue.description}
             issueStatus={issue.status}
+            updateStatus={updateStatus}
           />
         ))}
       </div>
@@ -26,4 +28,5 @@ export default function Column({ title, content }) {
 Column.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.arrayOf(PropTypes.object).isRequired,
+  updateStatus: PropTypes.func.isRequired,
 };
