@@ -1,28 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { statusOptions } from '../common';
 
 export default function StatusSelector({ issueId, currentStatus, updateStatus }) {
   const handleSelection = (e) => {
     updateStatus(issueId, e.target.value);
   };
-  const statusOptions = [
-    {
-      value: 'to-do',
-      text: 'To-do',
-    },
-    {
-      value: 'doing',
-      text: 'Doing',
-    },
-    {
-      value: 'review',
-      text: 'Review',
-    },
-    {
-      value: 'done',
-      text: 'Done',
-    },
-  ];
 
   return (
     <div>
