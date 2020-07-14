@@ -1,10 +1,6 @@
-// import BackLogColumn from './BackLogColumn';
-// import DoingColumn from './DoingColumn';
-// import DoneColumn from './DoneColumn';
-// import ReviewColumn from './ReviewColumn';
 import React from 'react';
+import PropTypes from 'prop-types';
 import Column from './Column';
-
 
 function BackLogColumn({ content }) {
   const TITLE = 'to-do';
@@ -51,4 +47,20 @@ export {
   DoingColumn,
   DoneColumn,
   ReviewColumn,
+};
+
+BackLogColumn.propTypes = {
+  content: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
+
+DoingColumn.propTypes = {
+  content: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
+
+ReviewColumn.propTypes = {
+  content: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
+
+DoneColumn.propTypes = {
+  content: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

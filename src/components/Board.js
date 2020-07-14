@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   BackLogColumn,
   DoingColumn,
@@ -19,3 +20,7 @@ export default function Board({ issues }) {
     </div>
   );
 }
+
+Board.propTypes = {
+  issues: PropTypes.arrayOf(PropTypes.object).isRequired,
+};

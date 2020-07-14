@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Card from '../Card';
 import '../../App.css';
 
@@ -21,3 +22,8 @@ export default function Column({ title, content }) {
     </div>
   );
 }
+
+Column.propTypes = {
+  title: PropTypes.string.isRequired,
+  content: PropTypes.arrayOf(PropTypes.object).isRequired,
+};

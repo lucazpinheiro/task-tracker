@@ -19,13 +19,13 @@ const ISSUE_LIST = [
   },
   {
     id: 'x00c81',
-    title: 'api call',
+    title: 'implement new endpoint',
     description: '...',
     status: 'doing',
   },
   {
     id: 'x00c94',
-    title: 'sort logic',
+    title: 'implement sort logic',
     description: '...',
     status: 'doing',
   },

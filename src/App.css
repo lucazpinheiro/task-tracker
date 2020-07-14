@@ -16,6 +16,7 @@ body{
     transform: translate(-50%, -50%);
     width: 90vw;
     height: 90vh;
+    border-radius: 5px;
     background-color: #708090;
 }
 
@@ -31,6 +32,7 @@ body{
     /* display: flex; */
     /* justify-content: center; */
     /* align-items: start; */
+    /* background-color: red; */
     margin-left: 5px;
     margin-right: 5px;
     width: 25%;
@@ -38,9 +40,7 @@ body{
 }
 
 .column {
-    
     overflow:hidden; 
     position:relative;
-   
 }
 

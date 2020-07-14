@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Card = styled.div`
@@ -8,6 +9,7 @@ const Card = styled.div`
   margin-top: 5%;
   margin-bottom: 5%;
   background-color: white;
+  border-radius: 15px;
   :hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
@@ -41,6 +43,7 @@ const ActionButton = styled.button`
   border: 1px solid #fff;
   outline: 0;
   font-weight: 300;
+  border-radius: 10px;
   :hover {
     opacity: 0.8;
   }
@@ -50,16 +53,23 @@ export default function IssueCard({ issueTitle, issueDescription, issueStatus })
   return (
     <Card>
       <CardContainer>
-        <Title>{issueTitle}</Title>
+        <Title>
+          {issueTitle}
+        </Title>
         <Description>
           {issueDescription}
         </Description>
         <Tag>
           {issueStatus}
         </Tag>
-        <ActionButton>option #1</ActionButton>
-        <ActionButton>option #2</ActionButton>
+        <ActionButton>update</ActionButton>
       </CardContainer>
     </Card>
   );
 }
+
+IssueCard.propTypes = {
+  issueTitle: PropTypes.string.isRequired,
+  issueDescription: PropTypes.string.isRequired,
+  issueStatus: PropTypes.string.isRequired,
+};
