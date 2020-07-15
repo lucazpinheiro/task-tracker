@@ -5,7 +5,7 @@ import {
   DoingColumn,
   DoneColumn,
   ReviewColumn,
-} from './columns/index';
+} from './Column';
 import '../App.css';
 
 function selectIssues(issuesList) {
