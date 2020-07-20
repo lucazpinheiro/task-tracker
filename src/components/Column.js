@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Card from './Card';
+import Card from './IssueCard';
+import AddIssue from './AddIssueCard';
 import '../App.css';
 
 function BackLogColumn({ content, updateStatus }) {
@@ -60,6 +61,7 @@ export default function Column({ title, content, updateStatus }) {
             updateStatus={updateStatus}
           />
         ))}
+        <AddIssue />
       </div>
     </div>
   );

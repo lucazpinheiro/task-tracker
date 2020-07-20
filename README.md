@@ -23,6 +23,9 @@ https://towardsdatascience.com/react-best-practices-804def6d5215
 Cards:
     https://medium.com/better-programming/build-a-reusable-responsive-card-component-with-styled-components-3ca14933f7e5
 
+Modal:
+    https://www.npmjs.com/package/react-modal
+
 
 TopBar: https://material-ui.com/components/app-bar/#app-bar
 
