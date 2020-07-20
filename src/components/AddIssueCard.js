@@ -6,14 +6,14 @@ import {
   AddIssueButton,
 } from './cardStyledComponents';
 
-export default function AddIssue() {
-  function logger() {
-    console.log('add issue button was clicked');
+export default function AddIssue({ modalHandler }) {
+  function openModal() {
+    modalHandler();
   }
   return (
     <Card>
       <CardContainer>
-        <AddIssueButton onClick={logger}>
+        <AddIssueButton onClick={openModal}>
           +
         </AddIssueButton>
       </CardContainer>

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Board from './components/Board';
+import IssueForm from './components/IssueForm';
+import CustomModal from './components/Modal';
 import './App.css';
 
 import ISSUE_LIST from './issues';
@@ -10,6 +12,7 @@ function getIssues() {
 
 function App() {
   const [issuesList, setIssuesList] = useState([]);
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     setIssuesList(getIssues());
@@ -22,9 +25,26 @@ function App() {
     setIssuesList(updatedIssuesList);
   }
 
+  // const subtitle = {};
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    console.log('modal was opened');
+    // references are now sync'd and can be accessed.
+    // subtitle.style.color = '#f00';
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
   return (
     <div className="board-container">
-      <Board issues={issuesList} updateStatus={handleUpdateStatus} />
+      <Board issues={issuesList} updateStatus={handleUpdateStatus} modalHandler={openModal} />
+      <CustomModal after={afterOpenModal} close={closeModal} modalStatus={modalIsOpen} Component={IssueForm} />
     </div>
   );
 }

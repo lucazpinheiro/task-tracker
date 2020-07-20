@@ -20,11 +20,11 @@ function selectIssues(issuesList) {
   return [todoList, doingList, reviewList, doneList];
 }
 
-export default function Board({ issues, updateStatus }) {
+export default function Board({ issues, updateStatus, modalHandler }) {
   const [todoList, doingList, reviewList, doneList] = selectIssues(issues);
   return (
     <div className="board">
-      <BackLogColumn content={todoList} updateStatus={updateStatus} />
+      <BackLogColumn content={todoList} updateStatus={updateStatus} modalHandler={modalHandler} />
       <DoingColumn content={doingList} updateStatus={updateStatus} />
       <ReviewColumn content={reviewList} updateStatus={updateStatus} />
       <DoneColumn content={doneList} updateStatus={updateStatus} />

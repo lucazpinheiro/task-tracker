@@ -48,16 +48,16 @@ export const ActionButton = styled.button`
 `;
 
 export const AddIssueButton = styled.button`
-  margin: 0 5px;
-  padding: 8px 14px;
-  background: rgba(16,123,175, 1.0);
-  color: #fff;
-  cursor: pointer;
-  border: 1px solid #fff;
-  outline: 0;
-  font-weight: 300;
-  border-radius: 10px;
-  :hover {
-    opacity: 0.8;
-  }
+  // margin: 0 5px;
+  // padding: 8px 14px;
+  // background: rgba(16,123,175, 1.0);
+  // color: #fff;
+  // cursor: pointer;
+  // border: 1px solid #fff;
+  // outline: 0;
+  // font-weight: 300;
+  // border-radius: 10px;
+  // :hover {
+  //   opacity: 0.8;
+  // }
 `;

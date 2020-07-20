@@ -4,53 +4,44 @@ import Card from './IssueCard';
 import AddIssue from './AddIssueCard';
 import '../App.css';
 
-function BackLogColumn({ content, updateStatus }) {
+// function Column({ title, content, updateStatus }) {
+//   return (
+//     <div className="column-container">
+//       <div className="column">
+//         <h2>
+//           {title}
+//         </h2>
+//         {content.map((issue) => (
+//           <Card
+//             key={issue.id}
+//             issueId={issue.id}
+//             issueTitle={issue.title}
+//             issueDescription={issue.description}
+//             issueStatus={issue.status}
+//             updateStatus={updateStatus}
+//           />
+//         ))}
+//         <AddIssue />
+//       </div>
+//     </div>
+//   );
+// }
+
+function ColumnTitle({ title }) {
+  return (
+    <h2>
+      {title}
+    </h2>
+  );
+}
+
+function BackLogColumn({ content, updateStatus, modalHandler }) {
   const TITLE = 'to-do';
 
   return (
-    <>
-      <Column title={TITLE} content={content} updateStatus={updateStatus} />
-    </>
-  );
-}
-
-function DoingColumn({ content, updateStatus }) {
-  const TITLE = 'doing';
-
-  return (
-    <>
-      <Column title={TITLE} content={content} updateStatus={updateStatus} />
-    </>
-  );
-}
-
-function ReviewColumn({ content, updateStatus }) {
-  const TITLE = 'review';
-
-  return (
-    <>
-      <Column title={TITLE} content={content} updateStatus={updateStatus} />
-    </>
-  );
-}
-
-function DoneColumn({ content, updateStatus }) {
-  const TITLE = 'done';
-
-  return (
-    <>
-      <Column title={TITLE} content={content} updateStatus={updateStatus} />
-    </>
-  );
-}
-
-export default function Column({ title, content, updateStatus }) {
-  return (
     <div className="column-container">
       <div className="column">
-        <h2>
-          {title}
-        </h2>
+        <ColumnTitle title={TITLE} />
         {content.map((issue) => (
           <Card
             key={issue.id}
@@ -61,7 +52,73 @@ export default function Column({ title, content, updateStatus }) {
             updateStatus={updateStatus}
           />
         ))}
-        <AddIssue />
+        <AddIssue modalHandler={modalHandler} />
+      </div>
+    </div>
+  );
+}
+
+function DoingColumn({ content, updateStatus }) {
+  const TITLE = 'doing';
+
+  return (
+    <div className="column-container">
+      <div className="column">
+        <ColumnTitle title={TITLE} />
+        {content.map((issue) => (
+          <Card
+            key={issue.id}
+            issueId={issue.id}
+            issueTitle={issue.title}
+            issueDescription={issue.description}
+            issueStatus={issue.status}
+            updateStatus={updateStatus}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ReviewColumn({ content, updateStatus }) {
+  const TITLE = 'review';
+
+  return (
+    <div className="column-container">
+      <div className="column">
+        <ColumnTitle title={TITLE} />
+        {content.map((issue) => (
+          <Card
+            key={issue.id}
+            issueId={issue.id}
+            issueTitle={issue.title}
+            issueDescription={issue.description}
+            issueStatus={issue.status}
+            updateStatus={updateStatus}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function DoneColumn({ content, updateStatus }) {
+  const TITLE = 'done';
+
+  return (
+    <div className="column-container">
+      <div className="column">
+        <ColumnTitle title={TITLE} />
+        {content.map((issue) => (
+          <Card
+            key={issue.id}
+            issueId={issue.id}
+            issueTitle={issue.title}
+            issueDescription={issue.description}
+            issueStatus={issue.status}
+            updateStatus={updateStatus}
+          />
+        ))}
       </div>
     </div>
   );
@@ -72,6 +129,10 @@ export {
   DoingColumn,
   DoneColumn,
   ReviewColumn,
+};
+
+ColumnTitle.propTypes = {
+  title: PropTypes.string.isRequired,
 };
 
 BackLogColumn.propTypes = {
@@ -90,12 +151,6 @@ ReviewColumn.propTypes = {
 };
 
 DoneColumn.propTypes = {
-  content: PropTypes.arrayOf(PropTypes.object).isRequired,
-  updateStatus: PropTypes.func.isRequired,
-};
-
-Column.propTypes = {
-  title: PropTypes.string.isRequired,
   content: PropTypes.arrayOf(PropTypes.object).isRequired,
   updateStatus: PropTypes.func.isRequired,
 };
