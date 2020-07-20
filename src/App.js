@@ -25,7 +25,9 @@ function App() {
     setIssuesList(updatedIssuesList);
   }
 
-  // const subtitle = {};
+  function handleAddIssue(issueData) {
+    setIssuesList(issuesList.push(issueData));
+  }
 
   function openModal() {
     setIsOpen(true);
@@ -33,8 +35,6 @@ function App() {
 
   function afterOpenModal() {
     console.log('modal was opened');
-    // references are now sync'd and can be accessed.
-    // subtitle.style.color = '#f00';
   }
 
   function closeModal() {
@@ -44,7 +44,7 @@ function App() {
   return (
     <div className="board-container">
       <Board issues={issuesList} updateStatus={handleUpdateStatus} modalHandler={openModal} />
-      <CustomModal after={afterOpenModal} close={closeModal} modalStatus={modalIsOpen} Component={IssueForm} />
+      <CustomModal after={afterOpenModal} close={closeModal} modalStatus={modalIsOpen} Component={IssueForm} formAction={handleAddIssue} />
     </div>
   );
 }

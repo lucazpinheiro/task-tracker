@@ -15,50 +15,8 @@ const customStyles = {
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 setAppElement('#root');
 
-// export default function CustomModal({ Component }) {
-//   let subtitle;
-//   const [modalIsOpen, setIsOpen] = useState(false);
-//   function openModal() {
-//     setIsOpen(true);
-//   }
-
-//   function afterOpenModal() {
-//     // references are now sync'd and can be accessed.
-//     subtitle.style.color = '#f00';
-//   }
-
-//   function closeModal() {
-//     setIsOpen(false);
-//   }
-
-//   return (
-//     <div>
-//       <button onClick={openModal}>Open Modal</button>
-//       <Modal
-//         isOpen={modalIsOpen}
-//         onAfterOpen={afterOpenModal}
-//         onRequestClose={closeModal}
-//         style={customStyles}
-//         contentLabel="Example Modal"
-//       >
-
-//         <h2 ref={_subtitle => (subtitle = _subtitle)}>Hello</h2>
-//         <button onClick={closeModal}>close</button>
-//         <div>I am a modal</div>
-//         <form>
-//           <input />
-//           <button>tab navigation</button>
-//           <button>stays</button>
-//           <button>inside</button>
-//           <button>the modal</button>
-//         </form>
-//       </Modal>
-//     </div>
-//   );
-// }
-
 export default function CustomModal({
-  Component, after, close, modalStatus,
+  Component, after, close, modalStatus, handleForm
 }) {
   return (
     <div>
@@ -72,7 +30,7 @@ export default function CustomModal({
       >
         {/* <h2 ref={(_subtitle) => { subtitle = _subtitle; }}>Hello</h2> */}
         <button type="button" onClick={close}>close</button>
-        <Component />
+        <Component handleForm={handleForm} />
       </Modal>
     </div>
   );
