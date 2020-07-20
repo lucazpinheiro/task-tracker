@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from './Card';
-import '../../App.css';
+import '../App.css';
 
 function BackLogColumn({ content, updateStatus }) {
   const TITLE = 'to-do';
