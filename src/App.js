@@ -3,7 +3,7 @@ import Board from './components/Board';
 import FormModal from './components/Modal';
 import './App.css';
 
-import ISSUE_LIST from './issues';
+import { ISSUE_LIST } from './common';
 
 function getIssues() {
   return ISSUE_LIST;

@@ -40,20 +40,20 @@ function BackLogColumn({ content, updateStatus, modalHandler }) {
 
   return (
     <div className="column-container">
+      <ColumnTitle title={TITLE} />
       <div className="column">
-        <ColumnTitle title={TITLE} />
         {content.map((issue) => (
-          <Card
-            key={issue.id}
-            issueId={issue.id}
-            issueTitle={issue.title}
-            issueDescription={issue.description}
-            issueStatus={issue.status}
-            updateStatus={updateStatus}
-          />
-        ))}
-        <AddIssue modalHandler={modalHandler} />
+        <Card
+          key={issue.id}
+          issueId={issue.id}
+          issueTitle={issue.title}
+          issueDescription={issue.description}
+          issueStatus={issue.status}
+          updateStatus={updateStatus}
+        />
+      ))}
       </div>
+      <AddIssue modalHandler={modalHandler} />
     </div>
   );
 }
@@ -63,8 +63,8 @@ function DoingColumn({ content, updateStatus }) {
 
   return (
     <div className="column-container">
+      <ColumnTitle title={TITLE} />
       <div className="column">
-        <ColumnTitle title={TITLE} />
         {content.map((issue) => (
           <Card
             key={issue.id}
@@ -85,8 +85,8 @@ function ReviewColumn({ content, updateStatus }) {
 
   return (
     <div className="column-container">
+      <ColumnTitle title={TITLE} />
       <div className="column">
-        <ColumnTitle title={TITLE} />
         {content.map((issue) => (
           <Card
             key={issue.id}
@@ -107,8 +107,8 @@ function DoneColumn({ content, updateStatus }) {
 
   return (
     <div className="column-container">
+      <ColumnTitle title={TITLE} />
       <div className="column">
-        <ColumnTitle title={TITLE} />
         {content.map((issue) => (
           <Card
             key={issue.id}
