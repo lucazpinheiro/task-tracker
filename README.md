@@ -2,8 +2,9 @@
 
 ## `TO-DO`
 
-MOST IMPORTANT
-- add logic to update status
+- add date timestamp on issue
+- add scroll on issues columns
+- add modal to issue
 
 CAN WAIT
 - add drag and drop
