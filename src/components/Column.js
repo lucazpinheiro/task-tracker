@@ -43,15 +43,15 @@ function BackLogColumn({ content, updateStatus, modalHandler }) {
       <ColumnTitle title={TITLE} />
       <div className="column">
         {content.map((issue) => (
-        <Card
-          key={issue.id}
-          issueId={issue.id}
-          issueTitle={issue.title}
-          issueDescription={issue.description}
-          issueStatus={issue.status}
-          updateStatus={updateStatus}
-        />
-      ))}
+          <Card
+            key={issue.id}
+            issueId={issue.id}
+            issueTitle={issue.title}
+            issueDescription={issue.description}
+            issueStatus={issue.status}
+            updateStatus={updateStatus}
+          />
+        ))}
       </div>
       <AddIssue modalHandler={modalHandler} />
     </div>
