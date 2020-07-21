@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Board from './components/Board';
-import FormModal from './components/Modal';
+import FormModal from './components/FormModal';
 import './App.css';
 
 import { ISSUE_LIST } from './common';

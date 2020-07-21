@@ -3,7 +3,6 @@
 ## `TO-DO`
 
 - add date timestamp on issue
-- add scroll on issues columns
 - add modal to issue
 
 CAN WAIT
