@@ -24,7 +24,6 @@ function App() {
     setIssuesList(updatedIssuesList);
   }
 
-
   function openModal() {
     setIsOpen(true);
   }

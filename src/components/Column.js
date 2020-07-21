@@ -138,6 +138,7 @@ ColumnTitle.propTypes = {
 BackLogColumn.propTypes = {
   content: PropTypes.arrayOf(PropTypes.object).isRequired,
   updateStatus: PropTypes.func.isRequired,
+  modalHandler: PropTypes.func.isRequired,
 };
 
 DoingColumn.propTypes = {

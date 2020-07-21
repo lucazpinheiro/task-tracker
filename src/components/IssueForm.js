@@ -1,12 +1,9 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { useForm } from 'react-hook-form';
-// import PropTypes from 'prop-types';
-// import Modal from 'react-modal';
+import PropTypes from 'prop-types';
 
 export default function IssueForm({ handleForm }) {
-  // function logger() {
-  //   console.log('add issue button was clicked');
-  // }
   const { register, handleSubmit } = useForm();
 
   function onSubmit(data) {
@@ -38,3 +35,7 @@ export default function IssueForm({ handleForm }) {
     </form>
   );
 }
+
+IssueForm.propTypes = {
+  handleForm: PropTypes.func.isRequired,
+};

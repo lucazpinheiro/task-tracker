@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {
   Card,
   CardContainer,
@@ -20,3 +20,7 @@ export default function AddIssue({ modalHandler }) {
     </Card>
   );
 }
+
+AddIssue.propTypes = {
+  modalHandler: PropTypes.func.isRequired,
+};

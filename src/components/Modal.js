@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Modal, { setAppElement } from 'react-modal';
 import IssueForm from './IssueForm';
 
@@ -17,7 +18,7 @@ const customStyles = {
 setAppElement('#root');
 
 export default function FormModal({
-  after, close, modalStatus, handleForm
+  after, close, modalStatus, handleForm,
 }) {
   return (
     <div>
@@ -35,3 +36,10 @@ export default function FormModal({
     </div>
   );
 }
+
+FormModal.propTypes = {
+  after: PropTypes.func.isRequired,
+  close: PropTypes.func.isRequired,
+  modalStatus: PropTypes.bool.isRequired,
+  handleForm: PropTypes.func.isRequired,
+};
