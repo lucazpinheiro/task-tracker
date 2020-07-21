@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Board from './components/Board';
-import IssueForm from './components/IssueForm';
-import CustomModal from './components/Modal';
+import FormModal from './components/Modal';
 import './App.css';
 
 import ISSUE_LIST from './issues';
@@ -44,7 +43,12 @@ function App() {
   return (
     <div className="board-container">
       <Board issues={issuesList} updateStatus={handleUpdateStatus} modalHandler={openModal} />
-      <CustomModal after={afterOpenModal} close={closeModal} modalStatus={modalIsOpen} Component={IssueForm} formAction={handleAddIssue} />
+      <FormModal
+        after={afterOpenModal}
+        close={closeModal}
+        modalStatus={modalIsOpen}
+        formAction={handleAddIssue}
+      />
     </div>
   );
 }

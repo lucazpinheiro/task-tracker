@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal, { setAppElement } from 'react-modal';
+import IssueForm from './IssueForm';
 
 const customStyles = {
   content: {
@@ -15,8 +16,8 @@ const customStyles = {
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 setAppElement('#root');
 
-export default function CustomModal({
-  Component, after, close, modalStatus, handleForm
+export default function FormModal({
+  after, close, modalStatus, handleForm
 }) {
   return (
     <div>
@@ -28,9 +29,8 @@ export default function CustomModal({
         contentLabel="Custom modal"
         parentSelector={() => document.querySelector('#root')}
       >
-        {/* <h2 ref={(_subtitle) => { subtitle = _subtitle; }}>Hello</h2> */}
         <button type="button" onClick={close}>close</button>
-        <Component handleForm={handleForm} />
+        <IssueForm handleForm={handleForm} />
       </Modal>
     </div>
   );

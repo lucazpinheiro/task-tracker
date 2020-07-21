@@ -14,7 +14,7 @@ export default function AddIssue({ modalHandler }) {
     <Card>
       <CardContainer>
         <AddIssueButton onClick={openModal}>
-          +
+          add issue
         </AddIssueButton>
       </CardContainer>
     </Card>
