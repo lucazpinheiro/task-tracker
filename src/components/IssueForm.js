@@ -17,9 +17,7 @@ export default function IssueForm({ handleForm }) {
       status: 'to-do',
     };
 
-    console.log(issueObj);
-    console.log(typeof(handleForm));
-    // handleForm(issueObj);
+    handleForm(issueObj);
   }
 
   return (

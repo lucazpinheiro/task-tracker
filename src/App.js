@@ -24,9 +24,6 @@ function App() {
     setIssuesList(updatedIssuesList);
   }
 
-  function handleAddIssue(issueData) {
-    setIssuesList(issuesList.push(issueData));
-  }
 
   function openModal() {
     setIsOpen(true);
@@ -40,6 +37,13 @@ function App() {
     setIsOpen(false);
   }
 
+  function handleAddIssue(issueData) {
+    const newList = [...issuesList];
+    newList.push(issueData);
+    setIssuesList(newList);
+    closeModal();
+  }
+
   return (
     <div className="board-container">
       <Board issues={issuesList} updateStatus={handleUpdateStatus} modalHandler={openModal} />
@@ -47,7 +51,7 @@ function App() {
         after={afterOpenModal}
         close={closeModal}
         modalStatus={modalIsOpen}
-        formAction={handleAddIssue}
+        handleForm={handleAddIssue}
       />
     </div>
   );
