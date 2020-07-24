@@ -94,6 +94,7 @@ function App() {
         after={afterOpenIssueModal}
         close={closeIssueModal}
         modalStatus={issueModalIsOpen}
+        issueContent={issueModalContent}
       />
     </div>
   );

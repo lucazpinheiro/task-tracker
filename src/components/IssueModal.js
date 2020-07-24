@@ -20,7 +20,14 @@ export default function IssueModal({
   after,
   close,
   modalStatus,
+  issueContent,
 }) {
+  const {
+    title,
+    description,
+    status,
+  } = issueContent;
+
   return (
     <div>
       <Modal
@@ -31,8 +38,21 @@ export default function IssueModal({
         contentLabel="Custom modal"
         parentSelector={() => document.querySelector('#root')}
       >
+
         <button type="button" onClick={close}>close</button>
-        IssueContent
+
+        <div>
+          <h2>
+            { title }
+          </h2>
+          <p>
+            { description }
+          </p>
+          <h3>
+            { status }
+          </h3>
+        </div>
+
       </Modal>
     </div>
   );
@@ -42,5 +62,6 @@ IssueModal.propTypes = {
   after: PropTypes.func.isRequired,
   close: PropTypes.func.isRequired,
   modalStatus: PropTypes.bool.isRequired,
+  issueContent: PropTypes.shape.isRequired,
   // handleForm: PropTypes.func.isRequired,
 };
