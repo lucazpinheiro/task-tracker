@@ -11,17 +11,28 @@ function getIssues() {
   return ISSUE_LIST;
 }
 
+function getIssueIndex(issueId, list) {
+  const issueIndex = list.findIndex((element) => element.id === issueId);
+  return issueIndex;
+}
+
 function App() {
   const [issuesList, setIssuesList] = useState([]);
   const [formModalIsOpen, setFormModalOpen] = useState(false);
   const [issueModalIsOpen, setIssueModalOpen] = useState(false);
+  const [issueModalContent, setIssueModalContent] = useState({
+    id: '',
+    title: '',
+    description: '',
+    status: '',
+  });
 
   useEffect(() => {
     setIssuesList(getIssues());
   }, []);
 
   function handleUpdateStatus(issueId, newStatus) {
-    const issueIndex = issuesList.findIndex((element) => element.id === issueId);
+    const issueIndex = getIssueIndex(issueId, issuesList);
     const updatedIssuesList = [...issuesList];
     updatedIssuesList[issueIndex].status = newStatus;
     setIssuesList(updatedIssuesList);
@@ -48,7 +59,12 @@ function App() {
   }
 
   // issue content modal
-  function openIssueModal() {
+  function openIssueModal(issueId) {
+    const issueIndex = getIssueIndex(issueId, issuesList);
+    const selectedIssue = issuesList[issueIndex];
+    setIssueModalContent({
+      ...selectedIssue,
+    });
     setIssueModalOpen(true);
   }
 

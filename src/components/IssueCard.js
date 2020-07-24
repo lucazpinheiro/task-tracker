@@ -18,7 +18,7 @@ export default function IssueCard({
   issueModalHandler,
 }) {
   function expandIssueHandler() {
-    issueModalHandler();
+    issueModalHandler(issueId);
   }
   return (
     <Card>
@@ -51,4 +51,5 @@ IssueCard.propTypes = {
   issueDescription: PropTypes.string.isRequired,
   issueStatus: PropTypes.string.isRequired,
   updateStatus: PropTypes.func.isRequired,
+  issueModalHandler: PropTypes.func.isRequired,
 };

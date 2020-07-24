@@ -35,7 +35,12 @@ function ColumnTitle({ title }) {
   );
 }
 
-function BackLogColumn({ content, updateStatus, formModalHandler, issueModalHandler, }) {
+function BackLogColumn({
+  content,
+  updateStatus,
+  formModalHandler,
+  issueModalHandler,
+}) {
   const TITLE = 'to-do';
 
   return (
@@ -142,20 +147,24 @@ ColumnTitle.propTypes = {
 BackLogColumn.propTypes = {
   content: PropTypes.arrayOf(PropTypes.object).isRequired,
   updateStatus: PropTypes.func.isRequired,
-  // modalHandler: PropTypes.func.isRequired,
+  formModalHandler: PropTypes.func.isRequired,
+  issueModalHandler: PropTypes.func.isRequired,
 };
 
 DoingColumn.propTypes = {
   content: PropTypes.arrayOf(PropTypes.object).isRequired,
   updateStatus: PropTypes.func.isRequired,
+  issueModalHandler: PropTypes.func.isRequired,
 };
 
 ReviewColumn.propTypes = {
   content: PropTypes.arrayOf(PropTypes.object).isRequired,
   updateStatus: PropTypes.func.isRequired,
+  issueModalHandler: PropTypes.func.isRequired,
 };
 
 DoneColumn.propTypes = {
   content: PropTypes.arrayOf(PropTypes.object).isRequired,
   updateStatus: PropTypes.func.isRequired,
+  issueModalHandler: PropTypes.func.isRequired,
 };
