@@ -1,9 +1,13 @@
 # jira/trello like issue tracker app
 
 ## `TO-DO`
-
 - add date timestamp on issue
-- add modal to issue
+    - for creation
+    - for update on description
+    - for update on status
+    - and show if issue is late or is on time
+- add tags
+    - ex: 'frontend', 'backend', 
 
 CAN WAIT
 - add drag and drop

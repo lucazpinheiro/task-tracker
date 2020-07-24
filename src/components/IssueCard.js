@@ -7,6 +7,7 @@ import {
   Title,
   Description,
   Tag,
+  ButtonRow,
 } from './cardStyledComponents';
 
 export default function IssueCard({
@@ -32,14 +33,16 @@ export default function IssueCard({
         <Tag>
           {issueStatus}
         </Tag>
-        <StatusSelector
-          issueId={issueId}
-          currentStatus={issueStatus}
-          updateStatus={updateStatus}
-        />
-        <button type="button" onClick={expandIssueHandler}>
-          Expand Issue
-        </button>
+        <ButtonRow>
+          <StatusSelector
+            issueId={issueId}
+            currentStatus={issueStatus}
+            updateStatus={updateStatus}
+          />
+          <button type="button" onClick={expandIssueHandler}>
+            Expand Issue
+          </button>
+        </ButtonRow>
       </CardContainer>
     </Card>
   );

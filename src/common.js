@@ -33,25 +33,25 @@ export const ISSUE_LIST = [
   {
     id: 'x00c51',
     title: 'api bug fix',
-    description: '...',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt',
     status: 'doing',
   },
   {
     id: 'x00c81',
     title: 'implement new endpoint',
-    description: '...',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt',
     status: 'doing',
   },
   {
     id: 'x00c94',
     title: 'implement sort logic',
-    description: '...',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt',
     status: 'doing',
   },
   {
     id: 'x00c36',
     title: 'new modal',
-    description: '...',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt',
     status: 'review',
   },
 ];
