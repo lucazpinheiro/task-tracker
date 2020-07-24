@@ -15,7 +15,11 @@ export default function IssueCard({
   issueDescription,
   issueStatus,
   updateStatus,
+  issueModalHandler,
 }) {
+  function expandIssueHandler() {
+    issueModalHandler();
+  }
   return (
     <Card>
       <CardContainer>
@@ -33,6 +37,9 @@ export default function IssueCard({
           currentStatus={issueStatus}
           updateStatus={updateStatus}
         />
+        <button type="button" onClick={expandIssueHandler}>
+          Expand Issue
+        </button>
       </CardContainer>
     </Card>
   );

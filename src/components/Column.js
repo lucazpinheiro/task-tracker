@@ -35,7 +35,7 @@ function ColumnTitle({ title }) {
   );
 }
 
-function BackLogColumn({ content, updateStatus, modalHandler }) {
+function BackLogColumn({ content, updateStatus, formModalHandler, issueModalHandler, }) {
   const TITLE = 'to-do';
 
   return (
@@ -50,15 +50,16 @@ function BackLogColumn({ content, updateStatus, modalHandler }) {
             issueDescription={issue.description}
             issueStatus={issue.status}
             updateStatus={updateStatus}
+            issueModalHandler={issueModalHandler}
           />
         ))}
       </div>
-      <AddIssue modalHandler={modalHandler} />
+      <AddIssue modalHandler={formModalHandler} />
     </div>
   );
 }
 
-function DoingColumn({ content, updateStatus }) {
+function DoingColumn({ content, updateStatus, issueModalHandler }) {
   const TITLE = 'doing';
 
   return (
@@ -73,6 +74,7 @@ function DoingColumn({ content, updateStatus }) {
             issueDescription={issue.description}
             issueStatus={issue.status}
             updateStatus={updateStatus}
+            issueModalHandler={issueModalHandler}
           />
         ))}
       </div>
@@ -80,7 +82,7 @@ function DoingColumn({ content, updateStatus }) {
   );
 }
 
-function ReviewColumn({ content, updateStatus }) {
+function ReviewColumn({ content, updateStatus, issueModalHandler }) {
   const TITLE = 'review';
 
   return (
@@ -95,6 +97,7 @@ function ReviewColumn({ content, updateStatus }) {
             issueDescription={issue.description}
             issueStatus={issue.status}
             updateStatus={updateStatus}
+            issueModalHandler={issueModalHandler}
           />
         ))}
       </div>
@@ -102,7 +105,7 @@ function ReviewColumn({ content, updateStatus }) {
   );
 }
 
-function DoneColumn({ content, updateStatus }) {
+function DoneColumn({ content, updateStatus, issueModalHandler }) {
   const TITLE = 'done';
 
   return (
@@ -117,6 +120,7 @@ function DoneColumn({ content, updateStatus }) {
             issueDescription={issue.description}
             issueStatus={issue.status}
             updateStatus={updateStatus}
+            issueModalHandler={issueModalHandler}
           />
         ))}
       </div>
@@ -138,7 +142,7 @@ ColumnTitle.propTypes = {
 BackLogColumn.propTypes = {
   content: PropTypes.arrayOf(PropTypes.object).isRequired,
   updateStatus: PropTypes.func.isRequired,
-  modalHandler: PropTypes.func.isRequired,
+  // modalHandler: PropTypes.func.isRequired,
 };
 
 DoingColumn.propTypes = {

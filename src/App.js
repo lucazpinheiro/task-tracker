@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Board from './components/Board';
 import FormModal from './components/FormModal';
+import IssueModal from './components/IssueModal';
 import './App.css';
 
 import { ISSUE_LIST } from './common';
+// import IssueForm from './components/IssueForm';
 
 function getIssues() {
   return ISSUE_LIST;
@@ -11,7 +13,8 @@ function getIssues() {
 
 function App() {
   const [issuesList, setIssuesList] = useState([]);
-  const [modalIsOpen, setIsOpen] = useState(false);
+  const [formModalIsOpen, setFormModalOpen] = useState(false);
+  const [issueModalIsOpen, setIssueModalOpen] = useState(false);
 
   useEffect(() => {
     setIssuesList(getIssues());
@@ -24,33 +27,57 @@ function App() {
     setIssuesList(updatedIssuesList);
   }
 
-  function openModal() {
-    setIsOpen(true);
+  // form modal
+  function openFormModal() {
+    setFormModalOpen(true);
   }
 
-  function afterOpenModal() {
+  function afterOpenFormModal() {
     console.log('modal was opened');
   }
 
-  function closeModal() {
-    setIsOpen(false);
+  function closeFormModal() {
+    setFormModalOpen(false);
   }
 
   function handleAddIssue(issueData) {
     const newList = [...issuesList];
     newList.push(issueData);
     setIssuesList(newList);
-    closeModal();
+    closeFormModal();
+  }
+
+  // issue content modal
+  function openIssueModal() {
+    setIssueModalOpen(true);
+  }
+
+  function afterOpenIssueModal() {
+    console.log('modal was opened');
+  }
+
+  function closeIssueModal() {
+    setIssueModalOpen(false);
   }
 
   return (
     <div className="board-container">
-      <Board issues={issuesList} updateStatus={handleUpdateStatus} modalHandler={openModal} />
+      <Board
+        issues={issuesList}
+        updateStatus={handleUpdateStatus}
+        openFormModalFunc={openFormModal}
+        openIssueModalFunc={openIssueModal}
+      />
       <FormModal
-        after={afterOpenModal}
-        close={closeModal}
-        modalStatus={modalIsOpen}
+        after={afterOpenFormModal}
+        close={closeFormModal}
+        modalStatus={formModalIsOpen}
         handleForm={handleAddIssue}
+      />
+      <IssueModal
+        after={afterOpenIssueModal}
+        close={closeIssueModal}
+        modalStatus={issueModalIsOpen}
       />
     </div>
   );
