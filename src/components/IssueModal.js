@@ -26,7 +26,15 @@ export default function IssueModal({
     title,
     description,
     status,
+    addedDate,
   } = issueContent;
+
+  function isOnTime(addedDate, endDate) {
+    const startDate = new Date(addedDate);
+    const finishDate = new Date(endDate);
+    const timeInterval = (finishDate.getTime() - startDate.getTime()) / (1000 * 3600 * 24);
+    return timeInterval;
+  }
 
   return (
     <div>

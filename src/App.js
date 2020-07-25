@@ -25,7 +25,10 @@ function App() {
     title: '',
     description: '',
     status: '',
+    addedDate: '',
   });
+
+  console.log(issuesList);
 
   useEffect(() => {
     setIssuesList(getIssues());

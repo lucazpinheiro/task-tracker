@@ -7,11 +7,13 @@ export default function IssueForm({ handleForm }) {
   const { register, handleSubmit } = useForm();
 
   function onSubmit(data) {
+    console.log(data.dateInput);
     const issueObj = {
       id: 'x00c99',
       title: data.title,
       description: data.description,
       status: 'to-do',
+      addedDate: new Date(),
     };
 
     handleForm(issueObj);
@@ -30,6 +32,12 @@ export default function IssueForm({ handleForm }) {
         <br />
         <input type="textarea" placeholder="Description" name="description" ref={register({ required: true })} />
       </label>
+      {/* <br />
+      <label>
+        Shoudl be finished by:
+        <br />
+        <input type="date" name="dateInput" />
+      </label> */}
       <br />
       <input type="submit" />
     </form>
