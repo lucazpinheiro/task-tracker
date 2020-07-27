@@ -26,7 +26,7 @@ export default function IssueModal({
     title,
     description,
     status,
-    addedDate,
+    // addedDate,
   } = issueContent;
 
   function isOnTime(addedDate, endDate) {

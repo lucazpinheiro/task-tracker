@@ -20,9 +20,9 @@ https://reactjs.org/docs/thinking-in-react.html
 
 https://programmingwithmosh.com/react/5-react-best-practices-to-learn-in-2020/
 
-https://www.codeinwp.com/blog/react-best-practices/
-
 https://towardsdatascience.com/react-best-practices-804def6d5215
+
+## `references for components`
 
 Cards:
     https://medium.com/better-programming/build-a-reusable-responsive-card-component-with-styled-components-3ca14933f7e5
@@ -50,7 +50,9 @@ drag and drop:
     "id": string -> six charecters
     "title": string,
     "description": string,
-    "status": "to-do" || "review" || "doing" || "done" ,  ... basic columns to start, want to add at least four default columns: to-do, doing, done and review
+    "status": "to-do" || "review" || "doing" || "done" ,  ... basic columns to start, want to add at least four default columns: to-do, doing, done and review,
+    "addedDate": string,
+    "finishDate": string,
 }
 ```
 ----------------------------

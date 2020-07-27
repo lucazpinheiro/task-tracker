@@ -4,8 +4,9 @@ import FormModal from './components/FormModal';
 import IssueModal from './components/IssueModal';
 import './App.css';
 
+// this import is only use during development
+// on production it will be replaced by a api call
 import { ISSUE_LIST } from './common';
-// import IssueForm from './components/IssueForm';
 
 function getIssues() {
   return ISSUE_LIST;
@@ -26,9 +27,8 @@ function App() {
     description: '',
     status: '',
     addedDate: '',
+    finishDate: '',
   });
-
-  console.log(issuesList);
 
   useEffect(() => {
     setIssuesList(getIssues());
@@ -44,10 +44,6 @@ function App() {
   // form modal
   function openFormModal() {
     setFormModalOpen(true);
-  }
-
-  function afterOpenFormModal() {
-    console.log('modal was opened');
   }
 
   function closeFormModal() {
@@ -71,10 +67,6 @@ function App() {
     setIssueModalOpen(true);
   }
 
-  function afterOpenIssueModal() {
-    console.log('modal was opened');
-  }
-
   function closeIssueModal() {
     setIssueModalOpen(false);
   }
@@ -88,13 +80,11 @@ function App() {
         openIssueModalFunc={openIssueModal}
       />
       <FormModal
-        after={afterOpenFormModal}
         close={closeFormModal}
         modalStatus={formModalIsOpen}
         handleForm={handleAddIssue}
       />
       <IssueModal
-        after={afterOpenIssueModal}
         close={closeIssueModal}
         modalStatus={issueModalIsOpen}
         issueContent={issueModalContent}
