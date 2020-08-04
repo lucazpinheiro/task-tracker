@@ -10,11 +10,11 @@ export default function IssueForm({ handleForm }) {
     const splitedString = initialString.split('-');
     const formatedElements = splitedString.map((elem) => {
       if (elem.length === 2 && elem[0] === '0') {
-        return elem.replace('0','');
+        return elem.replace('0', '');
       }
       return elem;
     });
-    return `${formatedElements[0]}-${formatedElements[1]}-${formatedElements[2]}`
+    return `${formatedElements[0]}-${formatedElements[1]}-${formatedElements[2]}`;
   }
 
   function onSubmit(data) {
@@ -24,8 +24,8 @@ export default function IssueForm({ handleForm }) {
       title: data.title,
       description: data.description,
       status: 'to-do',
-      addedDate: JSON.stringify(new Date()),
-      deadline: JSON.stringify(new Date(deadlineString)),
+      addedDate: new Date(),
+      deadline: new Date(deadlineString),
     };
 
     handleForm(issueObj);

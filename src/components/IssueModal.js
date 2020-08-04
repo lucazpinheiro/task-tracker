@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Modal, { setAppElement } from 'react-modal';
+import { calculateTimeInterval } from '../helpers';
 
 const customStyles = {
   content: {
@@ -26,21 +27,17 @@ export default function IssueModal({
     title,
     description,
     status,
-    addedDate,
     deadline,
   } = issueContent;
 
-  console.log(issueContent);
-
-  function isOnTime(dateDeadline) {
-    const startDate = new Date();
-    const finishDate = new Date(dateDeadline);
-    const timeInterval = (finishDate.getTime() - startDate.getTime()) / (1000 * 3600 * 24);
-    console.log(timeInterval);
-    // return timeInterval;
+  function isOnTime(dadelineDateString) {
+    const currentDateObj = new Date();
+    const deadlineDateObj = new Date(dadelineDateString);
+    const timeInterval = calculateTimeInterval(deadlineDateObj, currentDateObj);
+    return timeInterval;
   }
 
-  isOnTime(deadline);
+  const timeInterval = isOnTime(deadline);
 
   return (
     <div>
@@ -61,6 +58,9 @@ export default function IssueModal({
           </h2>
           <p>
             { description }
+          </p>
+          <p>
+            {`Issue is ${timeInterval >= 0 ? 'on time' : 'late'}`}
           </p>
           <h3>
             { status }
