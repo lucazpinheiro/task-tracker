@@ -5,7 +5,7 @@ import IssueModal from './components/IssueModal';
 import './App.css';
 
 // this import is only use during development
-// on production it will be replaced by a api call
+// on production it will be replaced by an API call
 import { ISSUE_LIST } from './common';
 
 function getIssues() {

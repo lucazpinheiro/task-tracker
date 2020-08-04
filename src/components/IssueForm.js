@@ -6,14 +6,26 @@ import PropTypes from 'prop-types';
 export default function IssueForm({ handleForm }) {
   const { register, handleSubmit } = useForm();
 
+  function dateFromString(initialString) {
+    const splitedString = initialString.split('-');
+    const formatedElements = splitedString.map((elem) => {
+      if (elem.length === 2 && elem[0] === '0') {
+        return elem.replace('0','');
+      }
+      return elem;
+    });
+    return `${formatedElements[0]}-${formatedElements[1]}-${formatedElements[2]}`
+  }
+
   function onSubmit(data) {
+    const deadlineString = dateFromString(data.dateInput);
     const issueObj = {
       id: 'x00c99',
       title: data.title,
       description: data.description,
       status: 'to-do',
-      addedDate: new Date(),
-      finishDate: new Date(data.dateInput),
+      addedDate: JSON.stringify(new Date()),
+      deadline: JSON.stringify(new Date(deadlineString)),
     };
 
     handleForm(issueObj);

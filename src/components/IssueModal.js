@@ -26,15 +26,21 @@ export default function IssueModal({
     title,
     description,
     status,
-    // addedDate,
+    addedDate,
+    deadline,
   } = issueContent;
 
-  function isOnTime(addedDate, endDate) {
-    const startDate = new Date(addedDate);
-    const finishDate = new Date(endDate);
+  console.log(issueContent);
+
+  function isOnTime(dateDeadline) {
+    const startDate = new Date();
+    const finishDate = new Date(dateDeadline);
     const timeInterval = (finishDate.getTime() - startDate.getTime()) / (1000 * 3600 * 24);
-    return timeInterval;
+    console.log(timeInterval);
+    // return timeInterval;
   }
+
+  isOnTime(deadline);
 
   return (
     <div>
