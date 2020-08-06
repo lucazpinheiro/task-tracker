@@ -1,14 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import StatusSelector from './StatusSelect';
+import StatusSelector from '../StatusSelect';
 import {
-  Card,
+  // Card,
   CardContainer,
   Title,
   Description,
   Tag,
   ButtonRow,
 } from './cardStyledComponents';
+
+import Card from './Card';
+
+// export const Title = styled.h2`
+//   color: #000;
+//   font-weight: 300;
+// `;
+
+// export const Description = styled.p`
+//   color: #000;
+//   font-weight: 300;
+// `;
+
+// export const Tag = styled.p`
+//   color: #000;
+//   font-weight: 300;
+// `;
 
 export default function IssueCard({
   issueId,

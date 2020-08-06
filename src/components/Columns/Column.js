@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Card from './IssueCard';
-import AddIssue from './AddIssueCard';
-import '../App.css';
+import Card from '../Cards/IssueCard';
+import AddIssue from '../Cards/AddIssueCard';
+import '../../App.css';
 
 // function Column({ title, content, updateStatus }) {
 //   return (

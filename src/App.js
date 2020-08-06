@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Board from './components/Board';
-import FormModal from './components/FormModal';
-import IssueModal from './components/IssueModal';
-import './App.css';
+// import FormModal from './components/FormModal';
+// import IssueModal from './components/IssueModal';
+// import './App.css';
 
 // this import is only use during development
 // on production it will be replaced by an API call
@@ -72,14 +72,14 @@ function App() {
   }
 
   return (
-    <div className="board-container">
+    <>
       <Board
         issues={issuesList}
         updateStatus={handleUpdateStatus}
         openFormModalFunc={openFormModal}
         openIssueModalFunc={openIssueModal}
       />
-      <FormModal
+      {/* <FormModal
         close={closeFormModal}
         modalStatus={formModalIsOpen}
         handleForm={handleAddIssue}
@@ -88,8 +88,8 @@ function App() {
         close={closeIssueModal}
         modalStatus={issueModalIsOpen}
         issueContent={issueModalContent}
-      />
-    </div>
+      /> */}
+    </>
   );
 }
 
