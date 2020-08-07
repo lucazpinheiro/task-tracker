@@ -6,11 +6,8 @@ import {
   CardContainer,
   Title,
   Description,
-  Tag,
   ButtonRow,
-} from './cardStyledComponents';
-
-import CardWrapper from './Card';
+} from './StyledCardComponents';
 
 // export const Title = styled.h2`
 //   color: #000;
@@ -47,9 +44,6 @@ export default function IssueCard({
         <Description>
           {issueDescription}
         </Description>
-        {/* <Tag>
-          {issueStatus}
-        </Tag> */}
         <ButtonRow>
           <StatusSelector
             issueId={issueId}

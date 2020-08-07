@@ -4,7 +4,7 @@ import {
   Card,
   CardContainer,
   AddIssueButton,
-} from './cardStyledComponents';
+} from './StyledCardComponents';
 
 export default function AddIssue({ modalHandler }) {
   function openModal() {
