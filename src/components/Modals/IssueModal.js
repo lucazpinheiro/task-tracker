@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Modal, { setAppElement } from 'react-modal';
-import { calculateTimeInterval } from '../helpers';
+import { calculateTimeInterval } from '../../helpers';
 
 const customStyles = {
   content: {
