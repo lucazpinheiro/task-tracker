@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import StatusSelector from '../StatusSelect';
 import {
-  // Card,
+  Card,
   CardContainer,
   Title,
   Description,
@@ -10,7 +10,7 @@ import {
   ButtonRow,
 } from './cardStyledComponents';
 
-import Card from './Card';
+import CardWrapper from './Card';
 
 // export const Title = styled.h2`
 //   color: #000;
@@ -47,9 +47,9 @@ export default function IssueCard({
         <Description>
           {issueDescription}
         </Description>
-        <Tag>
+        {/* <Tag>
           {issueStatus}
-        </Tag>
+        </Tag> */}
         <ButtonRow>
           <StatusSelector
             issueId={issueId}

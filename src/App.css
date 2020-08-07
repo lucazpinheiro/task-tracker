@@ -1,28 +1,6 @@
 
 body{
-    overflow:hidden;
+    overflow: hidden;
     margin: 0;
     font-family: 'Titillium Web', sans-serif;
 }
-
-
-/* columns */
-.column-container {
-    display: flex;
-    /* justify-content: center; */
-    /* align-items: start; */
-    flex-direction: column;
-    overflow: hidden; 
-    margin-left: 5px;
-    margin-right: 5px;
-    width: 25%;
-    height: 100%;
-}
-
-.column {
-    /* justify-content: center;
-    align-items: center; */
-    overflow-y: auto;
-    position:relative;
-}
-
