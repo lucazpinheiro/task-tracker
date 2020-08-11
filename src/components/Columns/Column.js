@@ -7,8 +7,8 @@ import '../../App.css';
 
 const ColumnContainer = styled.div`
   display: flex;
-  /* justify-content: center; */
-  /* align-items: start; */
+  flex-direction: column;
+  //align-items: center;
   flex-direction: column;
   overflow: hidden; 
   margin-left: 5px;
@@ -18,8 +18,8 @@ const ColumnContainer = styled.div`
 `;
 
 const ColumnContent = styled.div`
-  /* justify-content: center;
-  align-items: center; */
+  justify-content: center;
+  //align-items: center;
   overflow-y: auto;
   position:relative;
 `;

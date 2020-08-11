@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import {
   Card,
   CardContainer,
-  AddIssueButton,
+  ButtonRow,
+  Button,
 } from './StyledCardComponents';
 
 export default function AddIssue({ modalHandler }) {
@@ -13,9 +14,11 @@ export default function AddIssue({ modalHandler }) {
   return (
     <Card>
       <CardContainer>
-        <AddIssueButton onClick={openModal}>
-          add issue
-        </AddIssueButton>
+        <ButtonRow>
+          <Button onClick={openModal}>
+            add issue
+          </Button>
+        </ButtonRow>
       </CardContainer>
     </Card>
   );

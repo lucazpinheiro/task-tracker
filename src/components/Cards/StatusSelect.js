@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { statusOptions } from '../common';
+import { statusOptions } from '../../common';
 
 export default function StatusSelector({ issueId, currentStatus, updateStatus }) {
   const handleSelection = (e) => {
