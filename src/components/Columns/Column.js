@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Card from '../Cards/IssueCard';
 import AddIssue from '../Cards/AddIssueCard';
-import '../../App.css';
 
 const ColumnContainer = styled.div`
   display: flex;
@@ -38,7 +37,7 @@ function BackLogColumn({
   formModalHandler,
   issueModalHandler,
 }) {
-  const TITLE = 'to-do';
+  const TITLE = 'Todo';
 
   return (
     <ColumnContainer>

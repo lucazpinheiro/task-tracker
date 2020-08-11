@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Modal, { setAppElement } from 'react-modal';
-import IssueForm from '../IssueForm';
+import IssueForm from '../Forms/IssueForm';
 
 const customStyles = {
   content: {

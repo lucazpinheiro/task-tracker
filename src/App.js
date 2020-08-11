@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Board from './components/Board';
-// import FormModal from './components/FormModal';
-// import IssueModal from './components/IssueModal';
-// import './App.css';
+import FormModal from './components/Modals/FormModal';
+import IssueModal from './components/Modals/IssueModal';
+import { getIssueIndex } from './helpers/index';
+import './App.css';
 
 // this import is only use during development
 // on production it will be replaced by an API call
@@ -12,10 +13,6 @@ function getIssues() {
   return ISSUE_LIST;
 }
 
-function getIssueIndex(issueId, list) {
-  const issueIndex = list.findIndex((element) => element.id === issueId);
-  return issueIndex;
-}
 
 function App() {
   const [issuesList, setIssuesList] = useState([]);
@@ -79,7 +76,7 @@ function App() {
         openFormModalFunc={openFormModal}
         openIssueModalFunc={openIssueModal}
       />
-      {/* <FormModal
+      <FormModal
         close={closeFormModal}
         modalStatus={formModalIsOpen}
         handleForm={handleAddIssue}
@@ -88,7 +85,7 @@ function App() {
         close={closeIssueModal}
         modalStatus={issueModalIsOpen}
         issueContent={issueModalContent}
-      /> */}
+      />
     </>
   );
 }
