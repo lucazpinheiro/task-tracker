@@ -17,6 +17,7 @@ export default function IssueModal({
     title,
     description,
     status,
+    addedDate,
     deadline,
   } = issueContent;
 
@@ -39,9 +40,7 @@ export default function IssueModal({
         contentLabel="Custom modal"
         parentSelector={() => document.querySelector('#root')}
       >
-
         <button type="button" onClick={close}>close</button>
-
         <div>
           <h2>
             { title }
