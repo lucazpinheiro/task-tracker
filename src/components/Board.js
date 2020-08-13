@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import {
   BackLogColumn,
   DoingColumn,
@@ -8,20 +7,7 @@ import {
   ReviewColumn,
 } from './Columns/Column';
 import { selectIssues } from '../helpers';
-
-const BoardContainer = styled.div`
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width: 90vw;
-  height: 90vh;
-  border-radius: 5px;
-  background-color: #708090;
-  display: flex;
-`;
+import '../App.css';
 
 export default function Board({
   issues,
@@ -31,7 +17,7 @@ export default function Board({
 }) {
   const [todoList, doingList, reviewList, doneList] = selectIssues(issues);
   return (
-    <BoardContainer>
+    <div className="board-container">
       <BackLogColumn
         content={todoList}
         updateStatus={updateStatus}
@@ -53,7 +39,7 @@ export default function Board({
         updateStatus={updateStatus}
         issueModalHandler={openIssueModalFunc}
       />
-    </BoardContainer>
+    </div>
   );
 }
 

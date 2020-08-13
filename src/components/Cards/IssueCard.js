@@ -9,20 +9,7 @@ import {
   ButtonRow,
 } from './StyledCardComponents';
 
-// export const Title = styled.h2`
-//   color: #000;
-//   font-weight: 300;
-// `;
-
-// export const Description = styled.p`
-//   color: #000;
-//   font-weight: 300;
-// `;
-
-// export const Tag = styled.p`
-//   color: #000;
-//   font-weight: 300;
-// `;
+import SemanticCard from './SemanticCard';
 
 export default function IssueCard({
   issueId,
@@ -36,26 +23,30 @@ export default function IssueCard({
     issueModalHandler(issueId);
   }
   return (
-    <Card>
-      <CardContainer>
-        <Title>
-          {issueTitle}
-        </Title>
-        <Description>
-          {issueDescription}
-        </Description>
-        <ButtonRow>
-          <StatusSelector
-            issueId={issueId}
-            currentStatus={issueStatus}
-            updateStatus={updateStatus}
-          />
-          <button type="button" onClick={expandIssueHandler}>
-            Expand Issue
-          </button>
-        </ButtonRow>
-      </CardContainer>
-    </Card>
+    <SemanticCard
+      issueTitle={issueTitle}
+      issueDescription={issueDescription}
+    />
+  //   <Card>
+  //     <CardContainer>
+  //       <Title>
+  //         {issueTitle}
+  //       </Title>
+  //       <Description>
+  //         {issueDescription}
+  //       </Description>
+  //       <ButtonRow>
+  //         <StatusSelector
+  //           issueId={issueId}
+  //           currentStatus={issueStatus}
+  //           updateStatus={updateStatus}
+  //         />
+  //         <button type="button" onClick={expandIssueHandler}>
+  //           Expand Issue
+  //         </button>
+  //       </ButtonRow>
+  //     </CardContainer>
+  //   </Card>
   );
 }
 

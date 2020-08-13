@@ -1,27 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import Card from '../Cards/IssueCard';
 import AddIssue from '../Cards/AddIssueCard';
-
-const ColumnContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  //align-items: center;
-  flex-direction: column;
-  overflow: hidden; 
-  margin-left: 5px;
-  margin-right: 5px;
-  width: 25%;
-  height: 100%;
-`;
-
-const ColumnContent = styled.div`
-  justify-content: center;
-  //align-items: center;
-  overflow-y: auto;
-  position:relative;
-`;
 
 function ColumnTitle({ title }) {
   return (
@@ -37,12 +17,12 @@ function BackLogColumn({
   formModalHandler,
   issueModalHandler,
 }) {
-  const TITLE = 'Todo';
+  const TITLE = 'todo';
 
   return (
-    <ColumnContainer>
+    <div className="column-container">
       <ColumnTitle title={TITLE} />
-      <ColumnContent>
+      <div className="column-content">
         {content.map((issue) => (
           <Card
             key={issue.id}
@@ -54,9 +34,9 @@ function BackLogColumn({
             issueModalHandler={issueModalHandler}
           />
         ))}
-      </ColumnContent>
+      </div>
       <AddIssue modalHandler={formModalHandler} />
-    </ColumnContainer>
+    </div>
   );
 }
 
@@ -64,9 +44,9 @@ function DoingColumn({ content, updateStatus, issueModalHandler }) {
   const TITLE = 'doing';
 
   return (
-    <ColumnContainer>
+    <div className="column-container">
       <ColumnTitle title={TITLE} />
-      <ColumnContent>
+      <div className="column-content">
         {content.map((issue) => (
           <Card
             key={issue.id}
@@ -78,8 +58,8 @@ function DoingColumn({ content, updateStatus, issueModalHandler }) {
             issueModalHandler={issueModalHandler}
           />
         ))}
-      </ColumnContent>
-    </ColumnContainer>
+      </div>
+    </div>
   );
 }
 
@@ -87,9 +67,9 @@ function ReviewColumn({ content, updateStatus, issueModalHandler }) {
   const TITLE = 'review';
 
   return (
-    <ColumnContainer>
+    <div className="column-container">
       <ColumnTitle title={TITLE} />
-      <ColumnContent>
+      <div className="column-content">
         {content.map((issue) => (
           <Card
             key={issue.id}
@@ -101,8 +81,8 @@ function ReviewColumn({ content, updateStatus, issueModalHandler }) {
             issueModalHandler={issueModalHandler}
           />
         ))}
-      </ColumnContent>
-    </ColumnContainer>
+      </div>
+    </div>
   );
 }
 
@@ -110,9 +90,9 @@ function DoneColumn({ content, updateStatus, issueModalHandler }) {
   const TITLE = 'done';
 
   return (
-    <ColumnContainer>
+    <div className="column-container">
       <ColumnTitle title={TITLE} />
-      <ColumnContent>
+      <div className="column-content">
         {content.map((issue) => (
           <Card
             key={issue.id}
@@ -124,8 +104,8 @@ function DoneColumn({ content, updateStatus, issueModalHandler }) {
             issueModalHandler={issueModalHandler}
           />
         ))}
-      </ColumnContent>
-    </ColumnContainer>
+      </div>
+    </div>
   );
 }
 
