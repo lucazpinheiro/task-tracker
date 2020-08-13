@@ -13,7 +13,6 @@ function getIssues() {
   return ISSUE_LIST;
 }
 
-
 function App() {
   const [issuesList, setIssuesList] = useState([]);
   const [formModalIsOpen, setFormModalOpen] = useState(false);

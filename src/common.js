@@ -1,17 +1,21 @@
 export const statusOptions = [
   {
+    key: 'to-do',
     value: 'to-do',
     text: 'Todo',
   },
   {
+    key: 'doing',
     value: 'doing',
     text: 'Doing',
   },
   {
+    key: 'review',
     value: 'review',
     text: 'Review',
   },
   {
+    key: 'done',
     value: 'done',
     text: 'Done',
   },

@@ -1,25 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  Card,
-  CardContainer,
-  ButtonRow,
-  Button,
-} from './StyledCardComponents';
+import { Button, Card } from 'semantic-ui-react';
 
 export default function AddIssue({ modalHandler }) {
   function openModal() {
     modalHandler();
   }
+
   return (
     <Card>
-      <CardContainer>
-        <ButtonRow>
-          <Button onClick={openModal}>
-            add issue
+      <Card.Content extra>
+        <div className="ui two buttons">
+          <Button basic color="green" onClick={openModal}>
+            Add Issue
           </Button>
-        </ButtonRow>
-      </CardContainer>
+        </div>
+      </Card.Content>
     </Card>
   );
 }

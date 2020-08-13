@@ -1,15 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Button, Card } from 'semantic-ui-react';
 import StatusSelector from './StatusSelect';
-import {
-  Card,
-  CardContainer,
-  Title,
-  Description,
-  ButtonRow,
-} from './StyledCardComponents';
+// import SemanticStatusSelect from './SemanticStatusSelect';
 
-import SemanticCard from './SemanticCard';
 
 export default function IssueCard({
   issueId,
@@ -23,30 +17,36 @@ export default function IssueCard({
     issueModalHandler(issueId);
   }
   return (
-    <SemanticCard
-      issueTitle={issueTitle}
-      issueDescription={issueDescription}
-    />
-  //   <Card>
-  //     <CardContainer>
-  //       <Title>
-  //         {issueTitle}
-  //       </Title>
-  //       <Description>
-  //         {issueDescription}
-  //       </Description>
-  //       <ButtonRow>
-  //         <StatusSelector
-  //           issueId={issueId}
-  //           currentStatus={issueStatus}
-  //           updateStatus={updateStatus}
-  //         />
-  //         <button type="button" onClick={expandIssueHandler}>
-  //           Expand Issue
-  //         </button>
-  //       </ButtonRow>
-  //     </CardContainer>
-  //   </Card>
+    <Card>
+      <Card.Content>
+        <Card.Header>
+          {issueTitle}
+        </Card.Header>
+        {/* <Card.Meta>Friends of Elliot</Card.Meta> */}
+        <Card.Description>
+          {issueDescription}
+        </Card.Description>
+      </Card.Content>
+      <Card.Content extra>
+        <div className="ui two buttons">
+          <Button basic color="green" onClick={expandIssueHandler}>
+            Expand Issue
+          </Button>
+          {/* <Button basic color="green">
+            Next step
+          </Button> */}
+          {/* <SemanticStatusSelect
+            issueId={issueId}
+            updateStatus={updateStatus}
+          /> */}
+        </div>
+        <StatusSelector
+          issueId={issueId}
+          currentStatus={issueStatus}
+          updateStatus={updateStatus}
+        />
+      </Card.Content>
+    </Card>
   );
 }
 
