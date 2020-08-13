@@ -1,18 +1,4 @@
-# jira/trello like issue tracker app
-
-## `TO-DO`
-- add date timestamp on issue
-    - for creation
-    - for update on description
-    - for update on status
-    - and show if issue is late or is on time
-- add tags
-    - ex: 'frontend', 'backend', 
-
-CAN WAIT
-- add drag and drop
-- finish collumn layout (I will leave it the way it is for now, don't want to spend more time on the style)
-
+# jira/trello inspired app
 
 ## `some references for best practices`
 
@@ -22,27 +8,6 @@ https://programmingwithmosh.com/react/5-react-best-practices-to-learn-in-2020/
 
 https://towardsdatascience.com/react-best-practices-804def6d5215
 
-## `references for components`
-
-Cards:
-    https://medium.com/better-programming/build-a-reusable-responsive-card-component-with-styled-components-3ca14933f7e5
-
-Modal:
-    https://www.npmjs.com/package/react-modal
-
-
-TopBar: https://material-ui.com/components/app-bar/#app-bar
-
-examples for what I'm planning for the 'tags' feature
-    https://sanusart.github.io/react-dropdown-select/
-    https://react-select.com/home
-
-drag and drop:
-    
-    https://github.com/atlassian/react-beautiful-dnd
-
-    https://react-dnd.github.io/react-dnd/about
-
 ## `Issue basic structure`
 
 ```
@@ -50,9 +15,9 @@ drag and drop:
     "id": string -> six charecters
     "title": string,
     "description": string,
-    "status": "to-do" || "review" || "doing" || "done" ,  ... basic columns to start, want to add at least four default columns: to-do, doing, done and review,
+    "status": "to-do" || "doing" || "review" || "done",
     "addedDate": string,
-    "finishDate": string,
+    "deadline": string,
 }
 ```
 ----------------------------
@@ -68,53 +33,3 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
