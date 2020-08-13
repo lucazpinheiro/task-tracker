@@ -17,7 +17,6 @@ export default function IssueModal({
     title,
     description,
     status,
-    addedDate,
     deadline,
   } = issueContent;
 
@@ -66,5 +65,4 @@ IssueModal.propTypes = {
   close: PropTypes.func.isRequired,
   modalStatus: PropTypes.bool.isRequired,
   issueContent: PropTypes.shape.isRequired,
-  // handleForm: PropTypes.func.isRequired,
 };
