@@ -1,7 +1,7 @@
 export const statusOptions = [
   {
     value: 'to-do',
-    text: 'To-do',
+    text: 'Todo',
   },
   {
     value: 'doing',

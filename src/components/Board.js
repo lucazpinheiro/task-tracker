@@ -1,24 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import {
   BackLogColumn,
   DoingColumn,
   DoneColumn,
   ReviewColumn,
-} from './Column';
-import '../App.css';
+} from './Columns/Column';
+import { selectIssues } from '../helpers';
 
-function selectIssues(issuesList) {
-  const todoList = issuesList.filter((issue) => issue.status === 'to-do');
-
-  const doingList = issuesList.filter((issue) => issue.status === 'doing');
-
-  const reviewList = issuesList.filter((issue) => issue.status === 'review');
-
-  const doneList = issuesList.filter((issue) => issue.status === 'done');
-
-  return [todoList, doingList, reviewList, doneList];
-}
+const BoardContainer = styled.div`
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  height: 90vh;
+  border-radius: 5px;
+  background-color: #708090;
+  display: flex;
+`;
 
 export default function Board({
   issues,
@@ -28,7 +31,7 @@ export default function Board({
 }) {
   const [todoList, doingList, reviewList, doneList] = selectIssues(issues);
   return (
-    <div className="board">
+    <BoardContainer>
       <BackLogColumn
         content={todoList}
         updateStatus={updateStatus}
@@ -50,7 +53,7 @@ export default function Board({
         updateStatus={updateStatus}
         issueModalHandler={openIssueModalFunc}
       />
-    </div>
+    </BoardContainer>
   );
 }
 

@@ -6,9 +6,23 @@ import {
   CardContainer,
   Title,
   Description,
-  Tag,
   ButtonRow,
-} from './cardStyledComponents';
+} from './StyledCardComponents';
+
+// export const Title = styled.h2`
+//   color: #000;
+//   font-weight: 300;
+// `;
+
+// export const Description = styled.p`
+//   color: #000;
+//   font-weight: 300;
+// `;
+
+// export const Tag = styled.p`
+//   color: #000;
+//   font-weight: 300;
+// `;
 
 export default function IssueCard({
   issueId,
@@ -30,9 +44,6 @@ export default function IssueCard({
         <Description>
           {issueDescription}
         </Description>
-        <Tag>
-          {issueStatus}
-        </Tag>
         <ButtonRow>
           <StatusSelector
             issueId={issueId}

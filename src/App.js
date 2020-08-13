@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Board from './components/Board';
-import FormModal from './components/FormModal';
-import IssueModal from './components/IssueModal';
+import FormModal from './components/Modals/FormModal';
+import IssueModal from './components/Modals/IssueModal';
+import { getIssueIndex } from './helpers/index';
 import './App.css';
 
 // this import is only use during development
@@ -12,10 +13,6 @@ function getIssues() {
   return ISSUE_LIST;
 }
 
-function getIssueIndex(issueId, list) {
-  const issueIndex = list.findIndex((element) => element.id === issueId);
-  return issueIndex;
-}
 
 function App() {
   const [issuesList, setIssuesList] = useState([]);
@@ -72,7 +69,7 @@ function App() {
   }
 
   return (
-    <div className="board-container">
+    <>
       <Board
         issues={issuesList}
         updateStatus={handleUpdateStatus}
@@ -89,7 +86,7 @@ function App() {
         modalStatus={issueModalIsOpen}
         issueContent={issueModalContent}
       />
-    </div>
+    </>
   );
 }
 

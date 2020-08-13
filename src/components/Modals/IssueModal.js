@@ -1,18 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Modal, { setAppElement } from 'react-modal';
-import { calculateTimeInterval } from '../helpers';
-
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-  },
-};
+import customStyles from './modalStyle';
+import { calculateTimeInterval } from '../../helpers';
 
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 setAppElement('#root');
@@ -49,9 +39,7 @@ export default function IssueModal({
         contentLabel="Custom modal"
         parentSelector={() => document.querySelector('#root')}
       >
-
         <button type="button" onClick={close}>close</button>
-
         <div>
           <h2>
             { title }
@@ -77,5 +65,4 @@ IssueModal.propTypes = {
   close: PropTypes.func.isRequired,
   modalStatus: PropTypes.bool.isRequired,
   issueContent: PropTypes.shape.isRequired,
-  // handleForm: PropTypes.func.isRequired,
 };
