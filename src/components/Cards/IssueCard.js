@@ -1,9 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Card } from 'semantic-ui-react';
+import {
+  Card,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  Button,
+  Typography,
+  makeStyles,
+} from '@material-ui/core';
 import StatusSelector from './StatusSelect';
-// import SemanticStatusSelect from './SemanticStatusSelect';
 
+const useStyles = makeStyles({
+  root: {
+    maxWidth: 345,
+  },
+  media: {
+    height: 140,
+  },
+});
 
 export default function IssueCard({
   issueId,
@@ -16,37 +31,35 @@ export default function IssueCard({
   function expandIssueHandler() {
     issueModalHandler(issueId);
   }
+
+  const classes = useStyles();
+
   return (
-    <Card>
-      <Card.Content>
-        <Card.Header>
-          {issueTitle}
-        </Card.Header>
-        {/* <Card.Meta>Friends of Elliot</Card.Meta> */}
-        <Card.Description>
-          {issueDescription}
-        </Card.Description>
-      </Card.Content>
-      <Card.Content extra>
-        <div className="ui two buttons">
-          <Button basic color="green" onClick={expandIssueHandler}>
+    <div className="card-container">
+      <Card className={classes.root}>
+        <CardActionArea>
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              {issueTitle}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {issueDescription}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+        <CardActions>
+          <Button size="small" color="primary" onClick={expandIssueHandler}>
             Expand Issue
           </Button>
-          {/* <Button basic color="green">
-            Next step
-          </Button> */}
-          {/* <SemanticStatusSelect
+
+          <StatusSelector
             issueId={issueId}
+            currentStatus={issueStatus}
             updateStatus={updateStatus}
-          /> */}
-        </div>
-        <StatusSelector
-          issueId={issueId}
-          currentStatus={issueStatus}
-          updateStatus={updateStatus}
-        />
-      </Card.Content>
-    </Card>
+          />
+        </CardActions>
+      </Card>
+    </div>
   );
 }
 

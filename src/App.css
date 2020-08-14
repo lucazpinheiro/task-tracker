@@ -37,4 +37,13 @@ body{
   /* align-items: center; */
   overflow-y: auto;
   position:relative;
+  /* background-color: red; */
+}
+
+.card-container {
+  /* width: 300px;
+  border: 15px solid green;
+  padding: 50px; */
+  margin-bottom: 20px;
+
 }

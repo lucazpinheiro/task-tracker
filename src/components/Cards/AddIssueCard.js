@@ -1,21 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Card } from 'semantic-ui-react';
+import {
+  Card,
+  CardActions,
+  Button,
+  makeStyles,
+} from '@material-ui/core';
+
+const useStyles = makeStyles({
+  root: {
+    maxWidth: 345,
+  },
+  media: {
+    height: 140,
+  },
+});
 
 export default function AddIssue({ modalHandler }) {
   function openModal() {
     modalHandler();
   }
 
+  const classes = useStyles();
+
   return (
-    <Card>
-      <Card.Content extra>
-        <div className="ui two buttons">
-          <Button basic color="green" onClick={openModal}>
-            Add Issue
-          </Button>
-        </div>
-      </Card.Content>
+    <Card className={classes.root}>
+      <CardActions>
+        <Button size="small" color="primary" onClick={openModal}>
+          Add Issue
+        </Button>
+      </CardActions>
     </Card>
   );
 }
