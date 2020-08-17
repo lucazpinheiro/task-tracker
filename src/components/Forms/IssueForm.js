@@ -1,64 +1,77 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
-import { useForm } from 'react-hook-form';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { TextField, makeStyles, Button } from '@material-ui/core';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+      width: '25ch',
+    },
+  },
+}));
 
 export default function IssueForm({ handleForm }) {
-  const { register, handleSubmit } = useForm();
+  const classes = useStyles();
 
-  function dateFromString(initialString) {
-    const splitedString = initialString.split('-');
-    const formatedElements = splitedString.map((elem) => {
-      if (elem.length === 2 && elem[0] === '0') {
-        return elem.replace('0', '');
-      }
-      return elem;
-    });
-    return `${formatedElements[0]}-${formatedElements[1]}-${formatedElements[2]}`;
+  const [issueTitle, setIssueTitle] = useState('');
+  const [issueDescription, setIssueDescription] = useState('');
+  const [issueDeadline, setIssueDeadline] = useState('');
+
+  function handleTitleChange(e) {
+    setIssueTitle(e.target.value);
   }
 
-  function onSubmit(data) {
-    const deadlineString = dateFromString(data.dateInput);
+  function handleDescriptionChange(e) {
+    setIssueDescription(e.target.value);
+  }
+
+  function handleDeadlineChange(e) {
+    setIssueDeadline(e.target.value);
+  }
+
+  function handleSubmit() {
     const issueObj = {
       id: 'x00c99',
-      title: data.title,
-      description: data.description,
+      title: issueTitle,
+      description: issueDescription,
       status: 'to-do',
       addedDate: new Date(),
-      deadline: new Date(deadlineString),
+      deadline: new Date(issueDeadline),
     };
-
     handleForm(issueObj);
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <label>
-        Name
-        <br />
-        <input type="text" placeholder="Name" name="title" ref={register({ required: true })} />
-      </label>
-      <br />
-      <label>
-        Description
-        <br />
-        <input
-          type="textarea"
-          placeholder="Description"
-          name="description"
-          rows="5"
-          cols="33"
-          ref={register({ required: true })}
-        />
-      </label>
-      <br />
-      <label>
-        Shoudl be finished by:
-        <br />
-        <input type="date" name="dateInput" ref={register({ required: true })} />
-      </label>
-      <br />
-      <input type="submit" />
+    <form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
+      <TextField
+        id="issue-title"
+        name="title"
+        label="Title"
+        onChange={handleTitleChange}
+      />
+      <TextField
+        id="issue-description"
+        name="description"
+        label="Description"
+        multiline
+        rows={4}
+        variant="outlined"
+        onChange={handleDescriptionChange}
+      />
+      <TextField
+        id="datetime-local"
+        label="Deadline"
+        type="date"
+        className={classes.textField}
+        InputLabelProps={{
+          shrink: true,
+        }}
+        onChange={handleDeadlineChange}
+      />
+      <Button type="submit" size="small" color="primary">
+        Save
+      </Button>
     </form>
   );
 }

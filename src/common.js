@@ -33,7 +33,7 @@ export const ISSUE_LIST = [
   {
     id: 'x00c41',
     title: 'new component',
-    description: 'contemplar o vazio',
+    description: 'new modal component',
     status: 'done',
     addedDate: '2020-03-02T03:00:00.000Z',
     deadline: '2020-09-11T03:00:00.000Z',
