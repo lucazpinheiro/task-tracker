@@ -51,7 +51,6 @@ export default function IssueCard({
           <Button size="small" color="primary" onClick={expandIssueHandler}>
             Expand Issue
           </Button>
-
           <StatusSelector
             issueId={issueId}
             currentStatus={issueStatus}

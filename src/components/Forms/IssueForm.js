@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { TextField, makeStyles, Button } from '@material-ui/core';
+import {
+  TextField,
+  makeStyles,
+  Button,
+  Grid,
+} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -44,34 +49,45 @@ export default function IssueForm({ handleForm }) {
 
   return (
     <form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
-      <TextField
-        id="issue-title"
-        name="title"
-        label="Title"
-        onChange={handleTitleChange}
-      />
-      <TextField
-        id="issue-description"
-        name="description"
-        label="Description"
-        multiline
-        rows={4}
-        variant="outlined"
-        onChange={handleDescriptionChange}
-      />
-      <TextField
-        id="datetime-local"
-        label="Deadline"
-        type="date"
-        className={classes.textField}
-        InputLabelProps={{
-          shrink: true,
-        }}
-        onChange={handleDeadlineChange}
-      />
-      <Button type="submit" size="small" color="primary">
-        Save
-      </Button>
+      <Grid container item xs={50} direction="column" spacing={3}>
+        <Grid item>
+          <TextField
+            id="issue-title"
+            name="title"
+            label="Title"
+            onChange={handleTitleChange}
+            fullWidth
+          />
+        </Grid>
+        <Grid item>
+          <TextField
+            id="issue-description"
+            name="description"
+            label="Description"
+            multiline
+            rows={4}
+            variant="outlined"
+            onChange={handleDescriptionChange}
+          />
+        </Grid>
+        <Grid item>
+          <TextField
+            id="datetime-local"
+            label="Deadline"
+            type="date"
+            className={classes.textField}
+            InputLabelProps={{
+              shrink: true,
+            }}
+            onChange={handleDeadlineChange}
+          />
+        </Grid>
+        <Grid item>
+          <Button type="submit" size="small" color="primary">
+            Save
+          </Button>
+        </Grid>
+      </Grid>
     </form>
   );
 }
