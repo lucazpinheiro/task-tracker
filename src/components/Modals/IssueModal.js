@@ -1,11 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Modal, { setAppElement } from 'react-modal';
+import {
+  Container,
+  Chip,
+  Typography,
+  makeStyles,
+} from '@material-ui/core';
 import customStyles from './modalStyle';
 import { calculateTimeInterval } from '../../helpers';
 
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 setAppElement('#root');
+
+const useStyles = makeStyles({
+  root: {
+    width: '100%',
+    maxWidth: 'auto',
+  },
+});
 
 export default function IssueModal({
   after,
@@ -13,6 +26,8 @@ export default function IssueModal({
   modalStatus,
   issueContent,
 }) {
+  const classes = useStyles();
+
   const {
     title,
     description,
@@ -39,22 +54,25 @@ export default function IssueModal({
         contentLabel="Custom modal"
         parentSelector={() => document.querySelector('#root')}
       >
-        <button type="button" onClick={close}>close</button>
-        <div>
-          <h2>
-            { title }
-          </h2>
-          <p>
-            { description }
-          </p>
-          <p>
-            {`Issue is ${timeInterval >= 0 ? 'on time' : 'late'}`}
-          </p>
-          <h3>
-            { status }
-          </h3>
-        </div>
-
+        <Container fixed>
+          <div className={classes.root}>
+            {/* <Typography component="div" style={{ backgroundColor: '#cfe8fc', height: '100vh' }} /> */}
+            <Chip
+              variant="outlined"
+              label={status}
+              color="primary"
+            />
+            <Typography variant="h4" gutterBottom>
+              { title }
+            </Typography>
+            <Typography variant="body1">
+              { description }
+            </Typography>
+            <p>
+              {`Issue is ${timeInterval >= 0 ? 'on time' : 'late'}`}
+            </p>
+          </div>
+        </Container>
       </Modal>
     </div>
   );
