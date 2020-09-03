@@ -1,5 +1,7 @@
 # jira/trello inspired app
 
+*important:* This repo/project is on stand by, I want to learn more about react before work on it again.
+
 ## `some references for best practices`
 
 https://reactjs.org/docs/thinking-in-react.html
